@@ -7,8 +7,22 @@ function calculateDiscount(){
 calculateDiscount();
 
 
-//function parameters
+//function parameters & return values
 function calculateDiscount(discountPercentage, fullPrice) {
-  const discount = discountPercentage * fullPrice;
+  return discountPercentage * fullPrice;
 }
-calculateDiscount(0.15, 300);
+let percent = 0.15;
+let price = 9.99;
+
+let discount = calculateDiscount(percent, price);
+let finalPrice = price - discount;
+
+console.log(finalPrice);
+
+//annonymous functions
+const getDiscount = function(discountPercentage, fullPrice){
+  return discountPercentage * fullPrice;
+};
+
+console.log("Discount using annonymous function:");
+console.log(getDiscount(.5, 999.99));
