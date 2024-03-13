@@ -26,3 +26,17 @@ const getDiscount = function(discountPercentage, fullPrice){
 
 console.log("Discount using annonymous function:");
 console.log(getDiscount(.5, 999.99));
+
+//arrow function
+let getDiscount2 = (discountPercentage, fullPrice) => {
+  return discountPercentage * fullPrice;
+};
+
+getDiscount2 = (discountPercentage, fullPrice) => discountPercentage * fullPrice;
+console.log(getDiscount2(.5, 999.99));
+
+//callback function
+function getFinalPrice (fullPrice, percentOff, callback){
+  return fullPrice - callback(percentOff, fullPrice);
+}
+
