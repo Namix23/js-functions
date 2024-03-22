@@ -40,3 +40,8 @@ function getFinalPrice (fullPrice, percentOff, callback){
   return fullPrice - callback(percentOff, fullPrice);
 }
 
+// const newFinalPrice = getFinalPrice(14.5, .3, calculateDiscount);
+// console.log (newFinalPrice);
+
+const newFinalPrice = getFinalPrice(14.5, .3, (x, y) => x * y);
+console.log (newFinalPrice);
